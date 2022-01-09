@@ -18,6 +18,14 @@ app.get('/', (req, res) => {
   res.send('Hello from JWoC .......');
 });
 
+// Mentor routes
+const mentorRoutes = require('./routes/mentor');
+app.use('/mentor', mentorRoutes);
+
+// Mentee routes
+const menteeRoutes = require('./routes/mentee');
+app.use('/mentee', menteeRoutes);
+
 mongoose
   .connect(MONGODB_URL, {
     useNewUrlParser: true,
