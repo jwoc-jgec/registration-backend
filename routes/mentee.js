@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  res.send('Mentee');
-});
+const { getMentees, getMentee, addMentee } = require('../controllers/mentee');
+
+router.get('/', getMentees);
+router.get('/:email', getMentee);
+router.post('/', addMentee);
 
 module.exports = router;
