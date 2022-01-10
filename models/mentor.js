@@ -8,7 +8,8 @@ const mentorSchema = mongoose.Schema(
     email: requiredString,
     phone: requiredString,
     whatsapp: requiredString,
-    IPdetails: requiredMap,
+    ipAddress: requiredString,
+    ipDetails: requiredMap,
     college: requiredString,
     year: requiredNumber,
     github: requiredString,
@@ -20,6 +21,8 @@ const mentorSchema = mongoose.Schema(
     answer1: requiredString,
     question2: { type: String, default: MentorQuestions.question2 },
     answer2: requiredString,
+    isSelected: { type: Boolean, default: false },
+    isBanned: { type: Boolean, default: false },
   },
   {
     timestamps: true,

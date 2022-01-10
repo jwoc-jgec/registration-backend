@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  res.send('Mentor');
-});
+const { getMentor, getMentors, addMentor } = require('../controllers/mentor');
+
+router.get('/', getMentors);
+router.get('/:email', getMentor);
+router.post('/', addMentor);
 
 module.exports = router;

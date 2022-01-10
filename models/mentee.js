@@ -13,7 +13,8 @@ const menteeSchema = mongoose.Schema(
     email: requiredString,
     phone: requiredString,
     whatsapp: requiredString,
-    IPdetails: requiredMap,
+    ipAddress: requiredString,
+    ipDetails: requiredMap,
     college: requiredString,
     year: requiredNumber,
     github: requiredString,
@@ -21,6 +22,7 @@ const menteeSchema = mongoose.Schema(
     isFirstTime: requiredBool,
     question1: { type: String, default: MenteeQuestions.question1 },
     answer1: requiredString,
+    isBanned: { type: Boolean, default: false },
   },
   {
     timestamps: true,
