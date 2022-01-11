@@ -36,7 +36,7 @@ const addMentor = async (req, res) => {
     await Mentor.create(deatils);
     return res
       .status(200)
-      .json(Response({ isSuccess: true, message: 'New Mentor has been added' }));
+      .json(Response({ isSuccess: true, message: 'You have been registered successfully' }));
   } catch (error) {
     console.log(error);
     return res

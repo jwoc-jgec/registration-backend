@@ -36,7 +36,7 @@ const addMentee = async (req, res) => {
     await Mentee.create(deatils);
     return res
       .status(200)
-      .json(Response({ isSuccess: true, message: 'New Mentee has been added' }));
+      .json(Response({ isSuccess: true, message: 'You have been registered successfully' }));
   } catch (error) {
     console.log(error);
     return res.status(500).json(Response({ isSuccess: false, message: 'Something went wrong' }));
