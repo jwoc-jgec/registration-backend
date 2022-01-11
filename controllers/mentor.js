@@ -1,4 +1,5 @@
 const Mentor = require('../models/mentor');
+const Mentee = require('../models/mentee');
 const { Response } = require('../utils/Response');
 
 const addMentor = async (req, res) => {
@@ -6,17 +7,41 @@ const addMentor = async (req, res) => {
 
   try {
     let existingMentor;
+
+    // Checking the IP Address in mentor's and mentee's collections
     existingMentor = await Mentor.findOne({ ipAddress: deatils.ipAddress });
-    if (!existingMentor) existingMentor = await Mentor.findOne({ email: deatils.email });
+    if (!existingMentor) existingMentor = await Mentee.findOne({ ipAddress: deatils.ipAddress });
     if (existingMentor)
-      return res.status(409).json(Response({ isSuccess: false, message: 'Mentor already exists' }));
-    const newMentor = await Mentor.create(deatils);
+      return res
+        .status(409)
+        .json(
+          Response({ isSuccess: false, message: "Please don't spam and waste your internet :)" }),
+        );
+
+    // Checking if the email already exists in mentor's collection
+    existingMentor = await Mentor.findOne({ email: deatils.email });
+    if (existingMentor)
+      return res
+        .status(409)
+        .json(Response({ isSuccess: false, message: 'Mentor already exists !' }));
+
+    // Checking if the email already exists in mentee's collection
+    const existingMentee = await Mentee.findOne({ email: deatils.email });
+    if (existingMentee)
+      return res
+        .status(409)
+        .json(Response({ isSuccess: false, message: 'You have already registered as a mentee !' }));
+
+    // Creating a new mentor
+    await Mentor.create(deatils);
     return res
       .status(200)
-      .json(Response({ isSuccess: true, message: 'New Mentor has been added', data: newMentor }));
+      .json(Response({ isSuccess: true, message: 'New Mentor has been added' }));
   } catch (error) {
     console.log(error);
-    return res.status(500).json(Response({ isSuccess: false, message: 'Something went wrong' }));
+    return res
+      .status(500)
+      .json(Response({ isSuccess: false, message: 'Something went wrong, please try again !' }));
   }
 };
 
