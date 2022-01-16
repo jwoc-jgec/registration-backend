@@ -2,6 +2,8 @@ const Mentor = require('../models/mentor');
 const Mentee = require('../models/mentee');
 const { Response } = require('../utils/Response');
 
+const { sendMentorMail } = require('../utils/sendMail');
+
 const addMentor = async (req, res) => {
   const deatils = req.body;
 
@@ -15,6 +17,8 @@ const addMentor = async (req, res) => {
 
     // Creating a new mentor
     await Mentor.create(deatils);
+    sendMentorMail(deatils.email, deatils.name, deatils.projectName, deatils.projectLink);
+
     return res
       .status(200)
       .json(Response({ isSuccess: true, message: 'You have been registered successfully' }));
