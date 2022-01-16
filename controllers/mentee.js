@@ -5,42 +5,45 @@ const { Response } = require('../utils/Response');
 const { sendMenteeMail } = require('../utils/sendMail');
 
 const addMentee = async (req, res) => {
-  const deatils = req.body;
+  const details = req.body;
 
   try {
     let existingMentee;
 
     // Checking the IP Address in mentor's and mentee's collections
-    existingMentee = await Mentee.findOne({ ipAddress: deatils.ipAddress });
-    if (!existingMentee) existingMentee = await Mentor.findOne({ ipAddress: deatils.ipAddress });
+    existingMentee = await Mentee.findOne({ ipAddress: details.ipAddress });
+    if (!existingMentee) existingMentee = await Mentor.findOne({ ipAddress: details.ipAddress });
     if (existingMentee)
       return res
         .status(409)
         .json(
-          Response({ isSuccess: false, message: "Please don't spam and waste your internet :)" }),
+          Response({ isSuccess: false, message: "We don't support multiple registrations :)" }),
         );
 
     // Checking if the email already exists in mentee's collection
-    existingMentee = await Mentee.findOne({ email: deatils.email });
+    existingMentee = await Mentee.findOne({ email: details.email });
     if (existingMentee)
       return res
         .status(409)
         .json(Response({ isSuccess: false, message: 'You have already registered as a Mentee !' }));
 
     // Checking if the email already exists in mentor's collection
-    const existingMentor = await Mentor.findOne({ email: deatils.email });
+    const existingMentor = await Mentor.findOne({ email: details.email });
     if (existingMentor)
       return res
         .status(409)
         .json(Response({ isSuccess: false, message: 'You have already registered as a Mentor !' }));
 
     // Creating a new mentee
-    await Mentee.create(deatils);
-    sendMenteeMail(deatils.name, deatils.email);
+    await Mentee.create(details);
+    sendMenteeMail(details.name, details.email);
 
-    return res
-      .status(200)
-      .json(Response({ isSuccess: true, message: 'You have been registered successfully' }));
+    return res.status(200).json(
+      Response({
+        isSuccess: true,
+        message: 'You have been registered successfully, please check your email(also spam)',
+      }),
+    );
   } catch (error) {
     console.log(error);
     return res.status(500).json(Response({ isSuccess: false, message: 'Something went wrong' }));

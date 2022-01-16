@@ -7,6 +7,9 @@
     "email": "niloysikdar30@gmail.com",
     "url": "https://github.com/niloysikdar"
   },
+  "engines": {
+    "node": ">=14.x"
+  },
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
