@@ -2,6 +2,8 @@ const Mentor = require('../models/mentor');
 const Mentee = require('../models/mentee');
 const { Response } = require('../utils/Response');
 
+const { sendMenteeMail } = require('../utils/sendMail');
+
 const addMentee = async (req, res) => {
   const deatils = req.body;
 
@@ -23,17 +25,19 @@ const addMentee = async (req, res) => {
     if (existingMentee)
       return res
         .status(409)
-        .json(Response({ isSuccess: false, message: 'Mentee already exists !' }));
+        .json(Response({ isSuccess: false, message: 'You have already registered as a Mentee !' }));
 
     // Checking if the email already exists in mentor's collection
     const existingMentor = await Mentor.findOne({ email: deatils.email });
     if (existingMentor)
       return res
         .status(409)
-        .json(Response({ isSuccess: false, message: 'You have already registered as a mentor !' }));
+        .json(Response({ isSuccess: false, message: 'You have already registered as a Mentor !' }));
 
     // Creating a new mentee
     await Mentee.create(deatils);
+    sendMenteeMail(deatils.name, deatils.email);
+
     return res
       .status(200)
       .json(Response({ isSuccess: true, message: 'You have been registered successfully' }));
