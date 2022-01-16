@@ -16,6 +16,7 @@ const mentorSchema = mongoose.Schema(
     linkedIn: requiredString,
     projectName: requiredString,
     projectLink: requiredString,
+    projectTags: { type: [String], required: true },
     projectDescription: requiredString,
     question1: { type: String, default: MentorQuestions.question1 },
     answer1: requiredString,
