@@ -35,7 +35,7 @@ const addMentor = async (req, res) => {
 
 const getMentors = async (req, res) => {
   try {
-    const mentors = await Mentor.find();
+    const mentors = await Mentor.find().sort({ _id: -1 });
     return res.status(200).json(
       Response({
         isSuccess: true,

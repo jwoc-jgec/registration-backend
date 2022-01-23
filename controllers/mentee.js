@@ -52,7 +52,7 @@ const addMentee = async (req, res) => {
 
 const getMentees = async (req, res) => {
   try {
-    const mentees = await Mentee.find();
+    const mentees = await Mentee.find().sort({ _id: -1 });
     return res.status(200).json(
       Response({
         isSuccess: true,

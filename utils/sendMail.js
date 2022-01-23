@@ -5,7 +5,7 @@ const sendMenteeMail = (menteeName, menteeEmail) => {
   const mailOptions = {
     from: 'JWoC 2k22',
     to: menteeEmail,
-    subject: 'Welcome to JWOC 2K22 | Successfully Registered as Mentee',
+    subject: 'Welcome to JWOC | Successfully Registered as Mentee',
     html: getMenteeEmail(menteeName),
   };
 
@@ -18,7 +18,7 @@ const sendMentorMail = (mentorEmail, mentorName, projectName, githubLink) => {
   const mailOptions = {
     from: 'JWoC 2k22',
     to: mentorEmail,
-    subject: 'Welcome to JWOC 2K22 | Successfully Registered as Mentor',
+    subject: 'Welcome to JWOC | Successfully Registered as Mentor',
     html: getMentorEmail(mentorName, projectName, githubLink),
   };
 
