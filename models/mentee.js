@@ -10,6 +10,7 @@ const { MenteeQuestions } = require('../utils/Questions');
 const menteeSchema = mongoose.Schema(
   {
     name: requiredString,
+    gender: {type: String, default: 'Prefer not to say'},
     email: requiredString,
     phone: requiredString,
     whatsapp: requiredString,

@@ -55,7 +55,7 @@ const getMenteeEmail = (menteeName) => {
           >
             Hey ${menteeName} !
           </span>
-          JGEC Winter of Code 2K22 extends a warm welcome to you. We are excited to share that you
+          JGEC Winter of Code 2K23 extends a warm welcome to you. We are excited to share that you
           have successfully registered for the open-source extravaganza and we whole-heartedly look
           forward to your active participation as a Mentee in the event.
         </p>
@@ -173,10 +173,10 @@ const getMenteeEmail = (menteeName) => {
         >
           For any further queries, please feel free to reach out to us at
           <a
-            href="mailto:admin@jwoc.tech"
+            href="mailto:contact.jwoc@gmail.com"
             style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
           >
-            admin@jwoc.tech
+            contact.jwoc@gmail.com
           </a>
         </p>
         <div
@@ -294,7 +294,7 @@ const getMentorEmail = (mentorName, projectName, githubLink) => {
             Hey ${mentorName} !
           </span>
           We would like to thank you for showing interest to become a part of JGEC Winter of Code
-          2K22 as a Project Mentor. You are now successfully registered for the event. Your project
+          2K23 as a Project Mentor. You are now successfully registered for the event. Your project
           <span style="font-family: monospace; color: #c9f658; font-weight: 700; font-size: 18px"
             >${projectName}</span
           >
@@ -335,27 +335,7 @@ const getMentorEmail = (mentorName, projectName, githubLink) => {
             );
           "
         ></div>
-        <p
-          style="
-            margin: 20px auto;
-            font-size: 16px;
-            font-weight: 500;
-            font-family: sans-serif;
-            color: #eef2ff;
-            text-align: center;
-            line-height: 1.5;
-            letter-spacing: 0.6px;
-          "
-        >
-          Kindly adhere to the event rules and regulations which can be found here:
-          <a
-            href="https://jwoc.tech/docs/student-manual"
-            target="_blank"
-            style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
-          >
-            Mentees' Manual
-          </a>
-        </p>
+        
         <p
           style="
             margin: 20px auto;
@@ -371,10 +351,10 @@ const getMentorEmail = (mentorName, projectName, githubLink) => {
           If you have any queries with respect to the event or rules, feel free to reach out to us
           at
           <a
-            href="mailto:admin@jwoc.tech"
+            href="mailto:contact.jwoc@gmail.com"
             style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
           >
-            admin@jwoc.tech
+            contact.jwoc@gmail.com
           </a>
         </p>
         <div

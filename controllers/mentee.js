@@ -6,7 +6,6 @@ const { sendMenteeMail } = require('../utils/sendMail');
 
 const addMentee = async (req, res) => {
   const details = req.body;
-
   try {
     let existingMentee;
 
@@ -41,7 +40,7 @@ const addMentee = async (req, res) => {
     return res.status(200).json(
       Response({
         isSuccess: true,
-        message: 'You have been registered successfully, please check your email(also spam)',
+        message: 'You have been registered successfully as a mentee! Please check your email(also spam)',
       }),
     );
   } catch (error) {

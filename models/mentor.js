@@ -5,6 +5,7 @@ const { MentorQuestions } = require('../utils/Questions');
 const mentorSchema = mongoose.Schema(
   {
     name: requiredString,
+    gender: { type: String, default: 'Prefer not to say' },
     email: requiredString,
     phone: requiredString,
     whatsapp: requiredString,

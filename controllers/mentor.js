@@ -22,7 +22,7 @@ const addMentor = async (req, res) => {
     return res.status(200).json(
       Response({
         isSuccess: true,
-        message: 'You have been registered successfully, please check your email(also spam)',
+        message: 'You have been registered successfully as a mentor, please check your email(also spam)',
       }),
     );
   } catch (error) {
