@@ -10,8 +10,8 @@ const addMentee = async (req, res) => {
     let existingMentee;
 
     // Checking the IP Address in mentor's and mentee's collections
-    existingMentee = await Mentee.findOne({ ipAddress: details.ipAddress });
-    if (!existingMentee) existingMentee = await Mentor.findOne({ ipAddress: details.ipAddress });
+    // existingMentee = await Mentee.findOne({ ipAddress: details.ipAddress });
+    // if (!existingMentee) existingMentee = await Mentor.findOne({ ipAddress: details.ipAddress });
     if (existingMentee)
       return res
         .status(409)
