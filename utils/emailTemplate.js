@@ -73,7 +73,7 @@ const getMenteeEmail = (menteeName) => {
         >
           As a mandatory step, we request you to join our official Discord server via this link:
           <a
-            href="https://discord.gg/ve6ad4jfEP"
+            href="https://discord.gg/zAADerFckn"
             target="_blank"
             style="
               display: block;
@@ -152,7 +152,7 @@ const getMenteeEmail = (menteeName) => {
           engage with your mentors and learn more about the project. Kindly adhere to the event
           rules and regulations which can be found here:
           <a
-            href="https://jwoc.tech/docs/student-manual"
+            href="https://drive.google.com/file/d/1A9OrMUPd5STTd1MjE6ONhGxDCzLmG5xq/view?usp=share_link"
             target="_blank"
             style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
           >
@@ -171,6 +171,17 @@ const getMenteeEmail = (menteeName) => {
             letter-spacing: 0.6px;
           "
         >
+          Your mentee badge is attached with the mail. You can also find it 
+          <a href="https://drive.google.com/file/d/1mam1QLwrJEuhI_0lyavRB4J2T1RdoFkw/view?usp=share_link"
+          style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
+          >
+          here</a>. Do share it on LinkedIn and do not forget to tag 
+          <a href="https://www.linkedin.com/company/jwoc/"
+          style="font-size: 16px; font-weight: 600; color: #ff2861; text-decoration: none"
+          >
+          JGEC Winter of Code
+          </a>
+          <br/>
           For any further queries, please feel free to reach out to us at
           <a
             href="mailto:contact.jwoc@gmail.com"
